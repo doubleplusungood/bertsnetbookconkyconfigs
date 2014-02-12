@@ -1,6 +1,0 @@
-This repo contains conky config files and corresponding scripts for displaying the title, artist and album name as well as a progress bar for the current song in mocp (because the default conky mocp isn't cutting it for me). Also included is a script for a volume bar. 
-
-Usage:
-Add conky_start to your openbox (or some other wm) autostart.sh
-
-Get the font from: http://www.dafont.com/champagne-limousines.font
