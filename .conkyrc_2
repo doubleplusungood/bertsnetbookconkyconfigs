@@ -1,0 +1,78 @@
+# UBUNTU-CONKY
+# A comprehensive conky script, configured for use on
+# Ubuntu / Debian Gnome, without the need for any external scripts.
+#
+# Based on conky-jc and the default .conkyrc.
+# INCLUDES:
+# - tail of /var/log/messages
+# - netstat connections to your computer
+#
+# -- Pengo (conky@pengo.us)
+#
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type override
+own_window_hints below
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer left
+use_xft yes
+
+# Update interval in seconds
+update_interval 0.5
+
+#Maximum Width of Window
+maximum_width 640
+
+# Minimum size of text area
+# minimum_size 250 5
+
+# Draw shades?
+draw_shades no
+
+# Text stuff
+draw_outline no # amplifies text if yes
+draw_borders no
+font caviar dreams:size=14
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 3
+
+# bar size
+default_bar_size 320 5
+
+# border width
+border_width 6
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color 000000
+
+own_window_colour brown
+own_window_transparent yes
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 10
+gap_y 10
+
+# stuff after â€˜TEXTâ€™ will be formatted on screen
+
+TEXT
+
+${color CC9900}${alignr}${execpi 1 mocp -Q %song}$color
+${font caviar dreams:size=11}${alignr}${execpi 1 mocp -Q %artist}
+${alignr}${execpi 1 mocp -Q %album}
+$alignr${color FFFFFF}${execbar /home/bert/bert/derp.sh}$color
+$alignr${execpi 1 mocp -Q %ct} / ${execpi 1 mocp -Q %tt} ${execpi 1 mocp -Q %state}
+${alignr}Volume: ${exec amixer sget Master | grep dB | cut -d % -f1 | cut -d [ -f2} 
+$alignr${color FFFFFF}${execbar amixer sget Master | grep dB | cut -d % -f1 | cut -d [ -f2}$font$color

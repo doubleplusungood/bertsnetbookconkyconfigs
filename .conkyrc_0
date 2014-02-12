@@ -1,0 +1,94 @@
+# UBUNTU-CONKY
+# A comprehensive conky script, configured for use on
+# Ubuntu / Debian Gnome, without the need for any external scripts.
+#
+# Based on conky-jc and the default .conkyrc.
+# INCLUDES:
+# - tail of /var/log/messages
+# - netstat connections to your computer
+#
+# -- Pengo (conky@pengo.us)
+# --Bert modified
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type override
+own_window_hints below
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer left
+use_xft yes
+
+# Update interval in seconds
+update_interval 1
+
+#Maximum Width of Window
+maximum_width 320
+
+# Minimum size of text area
+# minimum_size 250 5
+
+# Draw shades?
+draw_shades no
+
+# Text stuff
+draw_outline no # amplifies text if yes
+draw_borders no
+font caviar dreams:size=11
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 3
+
+# border margins
+
+# border width
+border_width 6
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color 000000
+
+own_window_colour brown
+own_window_transparent yes
+
+# Text alignment, other possible values are commented
+#alignment top_left
+#alignment top_right
+alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 10
+gap_y 60
+
+# stuff after â€˜TEXTâ€™ will be formatted on screen
+
+TEXT
+$color
+${color CC9900}SYSTEM$color
+$nodename 
+$sysname $kernel 
+Linux Mint 13 LTS
+
+${color CC9900}BATTERY$color
+$battery $battery_time
+
+${color CC9900}UPTIME$color
+$uptime 
+
+${color CC9900}DISK$color
+sda7 / ${fs_type}: ${fs_free /} Free
+${color 7a5e1f} ${fs_bar 6 /}$color
+sda5 /home ${fs_type}: ${fs_free /home} Free
+${color 7a5e1f} ${fs_bar 6 /home}$color
+
+${color CC9900}WIRELESS (${addr wlan0})$color	
+Quality: ${wireless_link_qual_perc  wlan0}%
+Down: $color${downspeed wlan0}/s ${alignr}Up: ${upspeed wlan0}/s
+${downspeedgraph wlan0 25,140 555555 ffffff} ${alignr}${upspeedgraph wlan0
+25,140 555555 ffffff}$color
+Total: ${totaldown wlan0} ${alignr}Total: ${totalup wlan0}
+
