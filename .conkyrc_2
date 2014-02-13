@@ -1,13 +1,11 @@
-# UBUNTU-CONKY
-# A comprehensive conky script, configured for use on
-# Ubuntu / Debian Gnome, without the need for any external scripts.
-#
 # Based on conky-jc and the default .conkyrc.
+# .conkyrc for upper right corner
 # INCLUDES:
-# - tail of /var/log/messages
-# - netstat connections to your computer
-#
-# -- Pengo (conky@pengo.us)
+# - moc song information
+# - volume bar
+# IMPORTANT
+# - change <path to derp.sh> to your path to the script
+# -- Bert
 #
 
 # Create own window instead of using desktop (required in nautilus)
@@ -72,7 +70,7 @@ TEXT
 ${color CC9900}${alignr}${execpi 1 mocp -Q %song}$color
 ${font caviar dreams:size=11}${alignr}${execpi 1 mocp -Q %artist}
 ${alignr}${execpi 1 mocp -Q %album}
-$alignr${color FFFFFF}${execbar /home/bert/bert/derp.sh}$color
+$alignr${color FFFFFF}${execbar <path to derp.sh>}$color
 $alignr${execpi 1 mocp -Q %ct} / ${execpi 1 mocp -Q %tt} ${execpi 1 mocp -Q %state}
 ${alignr}Volume: ${exec amixer sget Master | grep dB | cut -d % -f1 | cut -d [ -f2} 
 $alignr${color FFFFFF}${execbar amixer sget Master | grep dB | cut -d % -f1 | cut -d [ -f2}$font$color
