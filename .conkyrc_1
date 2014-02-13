@@ -1,14 +1,4 @@
-# UBUNTU-CONKY
-# A comprehensive conky script, configured for use on
-# Ubuntu / Debian Gnome, without the need for any external scripts.
-#
-# Based on conky-jc and the default .conkyrc.
-# INCLUDES:
-# - tail of /var/log/messages
-# - netstat connections to your computer
-#
-# -- Pengo (conky@pengo.us)
-#
+# Includes additional entries for text from cowsay as well as netstat monitors for mobile (usb0) and ethernet connections
 
 # Create own window instead of using desktop (required in nautilus)
 own_window yes
@@ -85,7 +75,7 @@ gap_y 10
 
 TEXT
 ${color CC9900}${alignr}CPU$color
-${alignr}Intel Atom N570 1.66GHz
+${alignr}PUT CPU INFO HERE
 ${alignr}Total CPU: ${cpu cpu0}%
 ${color dab55a}${cpubar}$color
 ${alignr}Temperature: $acpitemp
