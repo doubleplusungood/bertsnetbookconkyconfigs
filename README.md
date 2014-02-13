@@ -9,5 +9,5 @@ Usage:
 Add the config files to ~/.conky
 Add conky_start to your openbox (or some other wm) autostart.sh
 
-Get the font from: http://www.dafont.com/champagne-limousines.font
+Get the fonts from: http://www.dafont.com/champagne-limousines.font and http://www.dafont.com/caviar-dreams.font
 
