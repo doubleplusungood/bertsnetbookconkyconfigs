@@ -1,14 +1,4 @@
-# UBUNTU-CONKY
-# A comprehensive conky script, configured for use on
-# Ubuntu / Debian Gnome, without the need for any external scripts.
-#
-# Based on conky-jc and the default .conkyrc.
-# INCLUDES:
-# - tail of /var/log/messages
-# - netstat connections to your computer
-#
-# -- Pengo (conky@pengo.us)
-# --Bert modified
+#Based on conky-jc and the default .conkyrc
 
 # Create own window instead of using desktop (required in nautilus)
 own_window yes
@@ -38,40 +28,32 @@ draw_shades no
 draw_outline no # amplifies text if yes
 draw_borders no
 font caviar dreams:size=11
-uppercase no # set to yes if you want all text to be in uppercase
+uppercase no 
 
 # Stippled borders?
 stippled_borders 3
 
-# border margins
-
 # border width
 border_width 6
 
-# Default colors and also border colors, grey90 == #e5e5e5
+# Default colors and also border colors
 default_color 000000
 
 own_window_colour brown
 own_window_transparent yes
 
-# Text alignment, other possible values are commented
-#alignment top_left
-#alignment top_right
+# Text alignment
 alignment bottom_left
-#alignment bottom_right
 
 # Gap between borders of screen and text
 gap_x 10
 gap_y 60
-
-# stuff after â€˜TEXTâ€™ will be formatted on screen
 
 TEXT
 $color
 ${color CC9900}SYSTEM$color
 $nodename 
 $sysname $kernel 
-Linux Mint 13 LTS
 
 ${color CC9900}BATTERY$color
 $battery $battery_time
